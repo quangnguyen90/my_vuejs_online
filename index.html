@@ -11,23 +11,25 @@
 
 <body>
     <div id="app">
-        {{ message }}
-        <p>Thuc thi function {{ sendMessage("Hello world") }}</p>
+        <p v-once>Tin nhan ban dau: {{ message }}</p>
+        <p>Tin nhan da duoc thay doi {{ changeMessage() }}</p>
+        <p v-html="rawData"> </p>
     </div>
 </body>
 <script>
     var app = new Vue({
         el: '#app',
         data: {
-            message: 'Hello Vue!'
+            message: 'Hello Vue!',
+            rawData: `
+                <p>Content HTML 1 </p>
+                <p>Content HTML 2 </p>
+            `
         },
         methods: {
-            sendMessage(value) {
+            changeMessage() {
                 return this.message = "Message is changed when execute function"
             },
-            sum: function () {
-
-            }
         }
     })
 </script>
