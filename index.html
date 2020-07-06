@@ -12,6 +12,7 @@
 <body>
     <div id="app">
         {{ message }}
+        <p>Thuc thi function {{ sendMessage("Hello world") }}</p>
     </div>
 </body>
 <script>
@@ -19,6 +20,14 @@
         el: '#app',
         data: {
             message: 'Hello Vue!'
+        },
+        methods: {
+            sendMessage(value) {
+                return this.message = "Message is changed when execute function"
+            },
+            sum: function () {
+
+            }
         }
     })
 </script>
